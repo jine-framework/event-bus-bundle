@@ -56,9 +56,9 @@ class EventBus
         return $this->bus->getResult($actionFullName);
     }
 
-    public function run(string $startAction): void
+    public function run(string $startAction, callable $callback = null): void
     {
         $this->bus->validate();
-        $this->bus->run($startAction);
+        $this->bus->run($startAction, $callback);
     }
 }
